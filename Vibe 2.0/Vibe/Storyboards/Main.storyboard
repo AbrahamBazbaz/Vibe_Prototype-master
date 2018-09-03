@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Friends View Controller-->
+        <scene sceneID="j90-U6-OLH">
+            <objects>
+                <viewController storyboardIdentifier="FriendsList" id="mMy-6M-Uws" customClass="FriendsViewController" customModule="Vibe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fCy-Sg-hko">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="69n-2v-61g">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="OYr-1X-9cF">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OYr-1X-9cF" id="LzS-0A-xZr" customClass="FriendCell" customModule="Vibe" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="69n-2v-61g" firstAttribute="top" secondItem="fCy-Sg-hko" secondAttribute="top" id="9vi-pn-0l7"/>
+                            <constraint firstItem="69n-2v-61g" firstAttribute="leading" secondItem="dCR-kZ-wDw" secondAttribute="leading" id="EEc-4y-LkR"/>
+                            <constraint firstAttribute="bottom" secondItem="69n-2v-61g" secondAttribute="bottom" id="HQZ-3h-bGD"/>
+                            <constraint firstItem="69n-2v-61g" firstAttribute="trailing" secondItem="dCR-kZ-wDw" secondAttribute="trailing" id="Wbd-Tv-AW5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dCR-kZ-wDw"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="jIz-9K-GP9" appends="YES" id="JmX-jO-7GA"/>
+                        </connections>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="j2A-fh-ncV"/>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="ArV-zq-AMH"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="W9y-rg-RpB">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="slideMenu" id="Lx0-sy-bHd">
+                            <color key="tintColor" red="0.32156862749999998" green="0.69019607839999997" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ywu-8Y-E6n">
+                            <color key="tintColor" red="0.32156862749999998" green="0.69019607839999997" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="addButton:" destination="mMy-6M-Uws" id="HRI-Ld-AW2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="menu" destination="Lx0-sy-bHd" id="eMv-lU-9fm"/>
+                        <outlet property="tableView" destination="69n-2v-61g" id="wfw-h7-mgy"/>
+                        <segue destination="Wlc-Gf-caM" kind="show" identifier="goToAddFriend" id="OF6-aH-XrI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kEL-cR-cqe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="jIz-9K-GP9"/>
+            </objects>
+            <point key="canvasLocation" x="-356" y="607.64617691154433"/>
+        </scene>
+        <!--Reveal View Controller-->
+        <scene sceneID="hIH-Fy-zeR">
+            <objects>
+                <viewController storyboardIdentifier="revealController" id="8eW-6i-8aB" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QF5-11-fkP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="xmC-na-2eQ"/>
+                    </view>
+                    <connections>
+                        <segue destination="cfV-9z-8xB" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="jsY-ct-mj2"/>
+                        <segue destination="AX7-7E-DcD" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="RJt-nV-Q2w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3uv-Lc-CfZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1982" y="-124"/>
+        </scene>
+        <!--Friend Request View Controller-->
+        <scene sceneID="dRt-9i-svy">
+            <objects>
+                <viewController id="Wlc-Gf-caM" customClass="FriendRequestViewController" customModule="Vibe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XrO-6K-Lbk" customClass="UI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRS-lw-HRu">
+                                <rect key="frame" x="116" y="395" width="143" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Send Friend Request"/>
+                                <connections>
+                                    <action selector="newFriendRequest:" destination="Wlc-Gf-caM" eventType="touchUpInside" id="fnM-Ua-laB"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EIo-XK-Ex7">
+                                <rect key="frame" x="79" y="318" width="216" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ibR-i0-neb"/>
+                    </view>
+                    <connections>
+                        <outlet property="newFriendTextField" destination="EIo-XK-Ex7" id="Gpo-uy-GJo"/>
+                        <segue destination="mMy-6M-Uws" kind="show" identifier="goToFriends" id="oYH-sN-EmN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TbN-S5-nkV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-265" y="-271"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="hP6-XQ-Qfr">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewID" autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="lnb-v7-Xnx" customClass="PageViewController" customModule="Vibe" customModuleProvider="target" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="NG3-V3-FS3">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="slideMenu" id="b9c-6R-Dsj">
+                            <color key="tintColor" red="0.32156862749999998" green="0.69019607839999997" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menu" destination="b9c-6R-Dsj" id="7S3-LK-jDB"/>
+                    </connections>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Rb-6M-FiV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="948" y="31"/>
+        </scene>
+        <!--Vibe View Controller-->
+        <scene sceneID="Cd0-Wq-G8D">
+            <objects>
+                <viewController storyboardIdentifier="VibeGroups" id="FBv-2O-bJ6" customClass="VibeViewController" customModule="Vibe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LC8-kF-Nyv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vibe Groups" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByM-jI-pYp">
+                                <rect key="frame" x="140" y="165" width="95" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" (Coming Soon)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQI-uf-MQ3">
+                                <rect key="frame" x="128" y="197" width="118" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.32156862749999998" green="0.69019607839999997" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <gestureRecognizers/>
+                        <viewLayoutGuide key="safeArea" id="LO5-81-YdW"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="xNq-p4-Tpj" appends="YES" id="bZR-YG-NwU"/>
+                        </connections>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="DY5-zZ-heT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="baO-5p-fBa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="xNq-p4-Tpj"/>
+            </objects>
+            <point key="canvasLocation" x="1737" y="30"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="xOy-54-b1H">
+            <objects>
+                <viewController id="TA6-kD-VEF" customClass="ProfileViewController" customModule="Vibe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X6Q-zj-URd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Features coming soon" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7LD-rU-Yju">
+                                <rect key="frame" x="60" y="315" width="255" height="37"/>
+                                <color key="backgroundColor" red="0.32156862749999998" green="0.69019607839999997" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7LD-rU-Yju" secondAttribute="height" multiplier="255:37" id="rhg-Bq-L7f"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7LD-rU-Yju" firstAttribute="centerY" secondItem="X6Q-zj-URd" secondAttribute="centerY" id="G6h-Ow-7Oo"/>
+                            <constraint firstItem="7LD-rU-Yju" firstAttribute="centerY" secondItem="X6Q-zj-URd" secondAttribute="centerY" id="NYN-aq-7ul"/>
+                            <constraint firstItem="7LD-rU-Yju" firstAttribute="centerX" secondItem="X6Q-zj-URd" secondAttribute="centerX" id="V6m-hy-ibf"/>
+                            <constraint firstItem="7LD-rU-Yju" firstAttribute="leading" secondItem="5o2-Ev-7Pu" secondAttribute="leading" constant="60" id="lgb-kg-gjE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5o2-Ev-7Pu"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rfz-1X-NcP">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="slideMenu" id="UsI-cE-6Jy">
+                            <color key="tintColor" red="0.32156862749999998" green="0.69019607839999997" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menu" destination="UsI-cE-6Jy" id="Dsm-s8-iVT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mJl-1C-Pu7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1679.2" y="1503.5982008995504"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="dPG-SO-1a2">
+            <objects>
+                <viewController id="cUF-zh-IJV" customClass="SettingsViewController" customModule="Vibe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vMJ-Fp-EnV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Features coming soon" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5V1-8L-hvq">
+                                <rect key="frame" x="60" y="315" width="255" height="37"/>
+                                <color key="backgroundColor" red="0.32156862749999998" green="0.69019607839999997" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5V1-8L-hvq" secondAttribute="height" multiplier="255:37" id="Mbm-Rp-dxw"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="5V1-8L-hvq" firstAttribute="leading" secondItem="jfY-0u-ZjP" secondAttribute="leading" constant="60" id="APZ-bx-Imt"/>
+                            <constraint firstItem="5V1-8L-hvq" firstAttribute="centerY" secondItem="vMJ-Fp-EnV" secondAttribute="centerY" id="lUa-IJ-JfQ"/>
+                            <constraint firstItem="5V1-8L-hvq" firstAttribute="centerY" secondItem="vMJ-Fp-EnV" secondAttribute="centerY" id="msC-QH-uKj"/>
+                            <constraint firstItem="5V1-8L-hvq" firstAttribute="centerX" secondItem="vMJ-Fp-EnV" secondAttribute="centerX" id="woe-ye-mwW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jfY-0u-ZjP"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Qin-ML-R48">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="slideMenu" id="KhP-Sk-rDO">
+                            <color key="tintColor" red="0.32156862749999998" green="0.69019607839999997" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menu" destination="KhP-Sk-rDO" id="HX9-18-XB3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BlJ-Y0-FHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-66" y="1504"/>
+        </scene>
+        <!--Start-->
+        <scene sceneID="ePh-VA-KtL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Start" id="jQa-kh-wdx" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7HF-RT-vS6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="470" y="1179"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="jML-Me-IzE">
+            <objects>
+                <viewController storyboardIdentifier="MenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AX7-7E-DcD" customClass="MenuViewController" customModule="Vibe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vd7-1E-ar0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" rowHeight="74" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FJl-up-LOq">
+                                <rect key="frame" x="0.0" y="319" width="260" height="296"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="74" id="a7K-VA-7zg" customClass="MenuTableViewCell" customModule="Vibe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="260" height="74"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a7K-VA-7zg" id="nct-VT-enR">
+                                            <rect key="frame" x="0.0" y="0.0" width="260" height="73.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mJ-xI-Pli">
+                                                    <rect key="frame" x="0.0" y="-1" width="260" height="74"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1mJ-xI-Pli" firstAttribute="leading" secondItem="nct-VT-enR" secondAttribute="leading" id="Vvf-Hb-n87"/>
+                                                <constraint firstAttribute="trailing" secondItem="1mJ-xI-Pli" secondAttribute="trailing" id="eQz-pR-CYg"/>
+                                                <constraint firstItem="1mJ-xI-Pli" firstAttribute="centerY" secondItem="nct-VT-enR" secondAttribute="centerY" id="rng-lF-6q7"/>
+                                                <constraint firstItem="1mJ-xI-Pli" firstAttribute="top" secondItem="nct-VT-enR" secondAttribute="topMargin" constant="-21" id="t8q-Ew-hJ9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.32156862749999998" green="0.69019607839999997" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <outlet property="menuItemLabel" destination="1mJ-xI-Pli" id="Sg9-wZ-lVK"/>
+                                            <segue destination="mMy-6M-Uws" kind="custom" trigger="accessoryAction" customClass="SWRevealViewControllerSeguePushController" id="Pup-6p-mo7"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="AX7-7E-DcD" id="90a-ca-joC"/>
+                                    <outlet property="delegate" destination="AX7-7E-DcD" id="q0l-wa-z35"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0a9-EX-4rf">
+                                <rect key="frame" x="8" y="177" width="244" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSr-Lh-YT8">
+                                <rect key="frame" x="8" y="218" width="244" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Pky-u7-a7K">
+                                <rect key="frame" x="107" y="261" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="onTintColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="vibeSwitchToggle:" destination="AX7-7E-DcD" eventType="valueChanged" id="zxh-R2-6ft"/>
+                                </connections>
+                            </switch>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profileTemplate3" translatesAutoresizingMaskIntoConstraints="NO" id="HfM-2T-OyF">
+                                <rect key="frame" x="68" y="44" width="125" height="125"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.32156862749999998" green="0.69019607839999997" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="gc3-3V-1ib"/>
+                    </view>
+                    <connections>
+                        <outlet property="name" destination="0a9-EX-4rf" id="v02-pB-vIS"/>
+                        <outlet property="profileImage" destination="HfM-2T-OyF" id="LJ1-sf-WDG"/>
+                        <outlet property="username" destination="pSr-Lh-YT8" id="xdw-t3-qTw"/>
+                        <outlet property="vibeSwitch" destination="Pky-u7-a7K" id="YGY-0Q-iaB"/>
+                        <segue destination="eAa-fa-bpU" kind="custom" identifier="Profile" customClass="SWRevealViewControllerSeguePushController" id="cXH-QP-IAJ"/>
+                        <segue destination="YCI-J0-Q3e" kind="custom" identifier="Settings" customClass="SWRevealViewControllerSeguePushController" id="uF5-yJ-Wnh"/>
+                        <segue destination="cfV-9z-8xB" kind="custom" identifier="Home" customClass="SWRevealViewControllerSeguePushController" id="ba3-lQ-t36"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sPR-oR-OTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1983.2" y="607.64617691154433"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rQ1-ll-VKh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cfV-9z-8xB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="skQ-CJ-dZx">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mMy-6M-Uws" kind="relationship" relationship="rootViewController" id="r8n-rZ-EvR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="low-Gh-mtl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1161" y="205"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fcw-e0-f7H">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eAa-fa-bpU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IHx-NA-70B">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TA6-kD-VEF" kind="relationship" relationship="rootViewController" id="iBf-Ft-Jxs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Htf-2y-0UX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2462" y="1504"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="S3E-hB-PSf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YCI-J0-Q3e" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PUp-eE-AxO">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cUF-zh-IJV" kind="relationship" relationship="rootViewController" id="Imp-Th-R88"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x4f-Tw-bnJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-836" y="1504"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="profileTemplate3" width="512" height="512"/>
+        <image name="slideMenu" width="26" height="26"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="jsY-ct-mj2"/>
+        <segue reference="oYH-sN-EmN"/>
+    </inferredMetricsTieBreakers>
+</document>
